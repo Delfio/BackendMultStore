@@ -7,5 +7,4 @@ const Route = use('Route')
 
 Route.post('users', 'UserController.store'); //Criar User
 Route.post('sessions', 'SessionController.store'); //Logar
-
-Route.post('forgotPassword', 'ForgotPasswordController.store'); //Lembrar Senha
+Route.post('forgot', 'ForgotPasswordController.store'); //Lembrar Senha

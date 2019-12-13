@@ -13,23 +13,21 @@ test('Teste de envio de email com instruções', async ({ assert, client }) => {
   const data = {
     username: 'Delfio Francisco',
     telefone: '993014603',
-    email: 'delfio_eu@hotmail.com',
+    email: "delfio_eu@hotmail.com",
     password: '123456'
   }
 
   const user = await User.create(data);
 
-  console.log(data.email)
-
   const response = await client
     .post('/forgot')
-    .send(data.email)
+    .send({email: data.email})
     .end()
   
-  response.assertStatus(200)
+  response.assertStatus(204)
 
   const recentEmail = Mail.pullRecent()
-  assert.equal(recentEmail.message.to[0].address, 'joe@example.com')
+  assert.equal(recentEmail.message.to[0].address, data.email)
 
   Mail.restore()
 })
