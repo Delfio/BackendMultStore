@@ -1,12 +1,12 @@
 'use strict'
 
-const { test, trait } = use('Test/Suite')('Rota de Users');
+const { test, trait } = use('Test/Suite')('User');
 
 
 trait('Test/ApiClient')
 
 test('Tesando cadastro de usúario', async ({ assert, client }) => {
-  console.log('cadastro');
+
   const response = await
     client.post('/users')
     .send({
@@ -28,7 +28,7 @@ response.assertStatus(200)
 });
 
 test('Autenticação de usúario', async({assert, client}) => {
-  console.log('login')
+
   const response = await
     client.post('/sessions')
     .send({
