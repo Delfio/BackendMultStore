@@ -1,14 +1,12 @@
 'use strict'
 
-const { test, trait } = use('Test/Suite')('Autenticação');
+const { test, trait } = use('Test/Suite')('Rota de Users');
 
-/** @type {typeof import('@adonisjs/lucid/src/Lucid/Model')} */
-const User = use('App/Models/User');
 
 trait('Test/ApiClient')
 
 test('Tesando cadastro de usúario', async ({ assert, client }) => {
-
+  console.log('cadastro');
   const response = await
     client.post('/users')
     .send({
@@ -27,4 +25,18 @@ test('Tesando cadastro de usúario', async ({ assert, client }) => {
 */
 response.assertStatus(200)
   //assert.exists(createUser.body.token);
+});
+
+test('Autenticação de usúario', async({assert, client}) => {
+  console.log('login')
+  const response = await
+    client.post('/sessions')
+    .send({
+      email: 'delfio_eu@hotmail.com',
+      password: '123456'
+    }).end()
+
+    response.assertStatus(200);
+
+    assert.exists(response.body.token);
 })
