@@ -11,8 +11,6 @@ class UserSchema extends Schema {
       table.string('telefone', 9).notNullable()
       table.string('email', 254).notNullable().unique()
       table.string('password', 60).notNullable()
-      table.string('token')
-      table.timestamp('token_created_at')
       table.timestamps()
     })
   }

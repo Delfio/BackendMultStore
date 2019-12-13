@@ -29,5 +29,12 @@ test('Teste de envio de email com instruções', async ({ assert, client }) => {
   const recentEmail = Mail.pullRecent()
   assert.equal(recentEmail.message.to[0].address, data.email)
 
+  const token = await user.tokens().first();
+
+  assert.include(token.toJSON(), {
+    user_id: user.id,
+    type: 'forgotpassword'
+  })
+
   Mail.restore()
 })
