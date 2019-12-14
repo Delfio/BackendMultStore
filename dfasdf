@@ -1,0 +1,35 @@
+[33mcommit 50b4d10ace4ffd7ab6b1e7432ffa27e5a8f67fc5[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Delfio <delfio_eu@hotmail.com>
+Date:   Fri Dec 13 19:51:51 2019 -0400
+
+    Rota para forgot password
+
+[33mcommit 62485d44d2949a53ed31e553b5c96cf855719fc5[m
+Author: Delfio <delfio_eu@hotmail.com>
+Date:   Fri Dec 13 17:52:38 2019 -0400
+
+    Envio de email com view
+
+[33mcommit 338ebcb74fe4645190be108f038ec994df1ffd1d[m
+Author: Delfio <delfio_eu@hotmail.com>
+Date:   Fri Dec 13 17:24:28 2019 -0400
+
+    Teste envio de email para forgot
+
+[33mcommit 1ce8c375c3cbdd3264fc7ca6e9daf602bd48a721[m
+Author: Delfio <delfio_eu@hotmail.com>
+Date:   Fri Dec 13 01:18:08 2019 -0400
+
+    Test Login User
+
+[33mcommit 3b9aec19ee612e87c915e192db2b8074dccdd152[m
+Author: Delfio <delfio_eu@hotmail.com>
+Date:   Fri Dec 13 01:02:35 2019 -0400
+
+    Test Register User
+
+[33mcommit 5110cb5d226509afef862fe263798a2b35417f7a[m
+Author: root <root@Del-PC.localdomain>
+Date:   Thu Dec 12 23:48:15 2019 -0400
+
+    Initial Commit
