@@ -8,7 +8,7 @@ class UserSchema extends Schema {
       table.string('username', 80).notNullable();
       table.string('telefone', 9).notNullable();
       table
-        .string('email', 254)
+        .string('email', 100)
         .notNullable()
         .unique();
       table.string('password', 60).notNullable();

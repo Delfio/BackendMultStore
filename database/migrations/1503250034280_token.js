@@ -11,7 +11,7 @@ class TokensSchema extends Schema {
         .references('id')
         .inTable('users');
       table
-        .string('token', 255)
+        .string('token', 150)
         .notNullable()
         .unique()
         .index();

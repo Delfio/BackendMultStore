@@ -6,3 +6,5 @@ Route.post('sessions', 'SessionController.store').validator('Session'); // Logar
 
 Route.post('forgot', 'ForgotPasswordController.store').validator('Forgot'); // Email para recuperaçaõ de senha
 Route.post('reset', 'ResetPasswordController.store').validator('Reset'); // Mudar a senha
+
+Route.post('lojas', 'LojasController.store').validator('Lojas'); // Cadastrar loja
