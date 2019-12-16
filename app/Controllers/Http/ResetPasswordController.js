@@ -8,26 +8,30 @@ class ResetPasswordController {
   async store({ request, response }) {
     const { token, password } = request.only(['token', 'password']);
 
-    const userToken = await Token.findByOrFail('token', token);
+    try {
+      const userToken = await Token.findByOrFail('token', token);
 
-    const tokenExpired = Moment()
-      .subtract('2', 'hours')
-      .isAfter(userToken.created_at);
+      const tokenExpired = Moment()
+        .subtract('2', 'hours')
+        .isAfter(userToken.created_at);
 
-    if (tokenExpired) {
+      if (tokenExpired) {
+        await userToken.delete();
+
+        return response.status(400).json({ error: 'token expirado' });
+      }
+      const user = await userToken.user().fetch();
+
+      user.password = password;
+
+      await user.save();
+
       await userToken.delete();
 
-      return response.status(400).json({ error: 'token expirado' });
+      return response.status(200).json({ ok: 'Senha alterada' });
+    } catch (err) {
+      return response.status(err.status).json({ error: 'Token inválido' });
     }
-    const user = await userToken.user().fetch();
-
-    user.password = password;
-
-    await user.save();
-
-    await userToken.delete();
-
-    return response.status(200).json({ ok: 'Senha alterada' });
   }
 }
 
