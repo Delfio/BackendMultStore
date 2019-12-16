@@ -3,7 +3,7 @@ class Session {
     return {
       email: 'email|required',
       password: 'required',
-    }
+    };
   }
 }
 
